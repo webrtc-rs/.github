@@ -18,23 +18,53 @@
 
 ---
 
-We build the whole WebRTC stack in Rust — from RTC protocols up to a browser-ready SFU, signaling server, and streaming ingest/egress. Everything is dual-licensed MIT / Apache-2.0.
+We build the full WebRTC network/protocol ecosystem in Rust — from low-level RTC protocols up to a browser-ready SFU, signaling server, and streaming ingest/egress. Everything is dual-licensed MIT / Apache-2.0.
 
-Our cores are **sans-I/O**: pure state machines with no sockets, no threads, and no clock of their own. The caller owns all I/O. That buys deterministic tests without a network, an async layer that isn't welded to one runtime, and — as it turns out — a media *server* built from the very same trait.
+Our cores are **Sans-I/O**: pure state machines with no sockets, no threads, and no clock of their own. The caller owns all I/O. That buys deterministic tests without a network, an async layer that isn't welded to one runtime, and — as it turns out — a media *server* built from the very same trait.
 
 ## Projects
 
 * [**sansio**](https://github.com/webrtc-rs/sansio) — the small `sansio::Protocol` trait everything else is written against.
-* [**rtc**](https://github.com/webrtc-rs/rtc) — the sans-I/O WebRTC core: ICE · STUN · TURN · mDNS · DTLS · SCTP · DataChannel · SRTP · RTP/RTCP · SDP.
+* [**rtc**](https://github.com/webrtc-rs/rtc) — the Sans-I/O WebRTC core: ICE · STUN · TURN · mDNS · DTLS · SCTP · DataChannel · SRTP · RTP/RTCP · SDP.
 * [**webrtc**](https://github.com/webrtc-rs/webrtc) — the async, runtime-agnostic `PeerConnection` API on top of `rtc`.
 * [**sfu**](https://github.com/webrtc-rs/sfu) — a Selective Forwarding Unit media server for group calls on top of `rtc`, live at [sfu.rs](https://sfu.rs).
-* [**apprtc**](https://github.com/webrtc-rs/apprtc) — signaling server and reference web app; P2P is live at [appr.tc](https://appr.tc), SFU signaling (🚧 *planned*) is next.
-* [**whip**](https://github.com/webrtc-rs/whip) — WebRTC-HTTP Ingestion Protocol, for pushing streams *into* the stack. 🚧 *planned*
-* [**whep**](https://github.com/webrtc-rs/whep) — WebRTC-HTTP Egress Protocol, for pulling streams *out* of it. 🚧 *planned*
+* [**apprtc**](https://github.com/webrtc-rs/apprtc) — signaling server and reference web app; P2P is live at [appr.tc](https://appr.tc), and SFU signaling is next. 🚧
+* [**whip**](https://github.com/webrtc-rs/whip) — WebRTC-HTTP Ingestion Protocol, for pushing streams *into* the stack. 🚧
+* [**whep**](https://github.com/webrtc-rs/whep) — WebRTC-HTTP Egress Protocol, for pulling streams *out* of it. 🚧
+
+🚧 = in progress. Everything else is published on crates.io:
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">WebRTC<a href="https://crates.io/crates/webrtc"><img src="https://img.shields.io/crates/v/webrtc.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/uncheck.png">AppRTC<a href="https://crates.io/crates/apprtc"><img src="https://img.shields.io/crates/v/apprtc.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">SFU<a href="https://crates.io/crates/sfu"><img src="https://img.shields.io/crates/v/sfu.svg"></a>
+    <br><br>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">RTC<a href="https://crates.io/crates/rtc"><img src="https://img.shields.io/crates/v/rtc.svg"></a>
+    <br>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">Media<a href="https://crates.io/crates/rtc-media"><img src="https://img.shields.io/crates/v/rtc-media.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">Interceptor<a href="https://crates.io/crates/rtc-interceptor"><img src="https://img.shields.io/crates/v/rtc-interceptor.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">DataChannel<a href="https://crates.io/crates/rtc-datachannel"><img src="https://img.shields.io/crates/v/rtc-datachannel.svg"></a>
+    <br>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">RTP<a href="https://crates.io/crates/rtc-rtp"><img src="https://img.shields.io/crates/v/rtc-rtp.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">RTCP<a href="https://crates.io/crates/rtc-rtcp"><img src="https://img.shields.io/crates/v/rtc-rtcp.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">SRTP<a href="https://crates.io/crates/rtc-srtp"><img src="https://img.shields.io/crates/v/rtc-srtp.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">SCTP<a href="https://crates.io/crates/rtc-sctp"><img src="https://img.shields.io/crates/v/rtc-sctp.svg"></a>
+    <br>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">DTLS<a href="https://crates.io/crates/rtc-dtls"><img src="https://img.shields.io/crates/v/rtc-dtls.svg"></a>
+    <br>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">mDNS<a href="https://crates.io/crates/rtc-mdns"><img src="https://img.shields.io/crates/v/rtc-mdns.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">STUN<a href="https://crates.io/crates/rtc-stun"><img src="https://img.shields.io/crates/v/rtc-stun.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">TURN<a href="https://crates.io/crates/rtc-turn"><img src="https://img.shields.io/crates/v/rtc-turn.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">ICE<a href="https://crates.io/crates/rtc-ice"><img src="https://img.shields.io/crates/v/rtc-ice.svg"></a>
+    <br>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">SDP<a href="https://crates.io/crates/rtc-sdp"><img src="https://img.shields.io/crates/v/rtc-sdp.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">Shared<a href="https://crates.io/crates/rtc-shared"><img src="https://img.shields.io/crates/v/rtc-shared.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">SansIO<a href="https://crates.io/crates/sansio"><img src="https://img.shields.io/crates/v/sansio.svg"></a>
+</p>
 
 ## Work with us
 
-Contributors and pull requests are always welcome, and there is plenty that is well-scoped and open. Sans-I/O means you can usually test your change without a network.
+Contributors and pull requests are always welcome, and there is plenty that is well-scoped and open — simulcast, publish/subscribe, and congestion control in [`sfu`](https://github.com/webrtc-rs/sfu), the WHIP/WHEP crates, plus interop and performance work everywhere. Sans-I/O means you can usually test your change without a network. Come say hi on [Discord](https://discord.gg/4Ju8UHdXMs).
 
 ---
 
