@@ -69,5 +69,11 @@ Contributors and pull requests are always welcome, and there is plenty that is w
 ---
 
 <p align="center">
-    Built with 💖 and supported by our <a href="https://github.com/sponsors/webrtc-rs">sponsors</a>.
+    Built with 💖 and supported by our sponsors:
+    <br><br>
+    <a href="https://github.com/sponsors/webrtc-rs"><img width="16" height="16" alt="GitHub Sponsors" src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/github-sponsors.svg" />&nbsp;github.com/sponsors/webrtc-rs</a> 
+    &nbsp;·&nbsp;
+    <a href="https://opencollective.com/webrtc-rs"><img width="16" height="16" alt="Open Collective" src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/open-collective.svg" />&nbsp;opencollective.com/webrtc-rs</a>
+    &nbsp;·&nbsp;
+    <a href="https://patreon.com/WebRTCrs"><img width="16" height="16" alt="Patreon" src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/patreon.svg" />&nbsp;patreon.com/WebRTCrs</a>
 </p>
