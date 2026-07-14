@@ -18,16 +18,16 @@
 
 ---
 
-We build the whole WebRTC stack for Rust — from RTC protocols up to a browser-ready SFU, signaling server, and streaming ingest/egress. Everything is dual-licensed MIT / Apache-2.0.
+We build the whole WebRTC stack in Rust — from RTC protocols up to a browser-ready SFU, signaling server, and streaming ingest/egress. Everything is dual-licensed MIT / Apache-2.0.
 
 Our cores are **sans-I/O**: pure state machines with no sockets, no threads, and no clock of their own. The caller owns all I/O. That buys deterministic tests without a network, an async layer that isn't welded to one runtime, and — as it turns out — a media *server* built from the very same trait.
 
 ## Projects
 
 * [**sansio**](https://github.com/webrtc-rs/sansio) — the small `sansio::Protocol` trait everything else is written against.
-* [**rtc**](https://github.com/webrtc-rs/rtc) — the sans-I/O WebRTC core: STUN · ICE · DTLS · SCTP · DataChannel · SRTP · RTP/RTCP · SDP · Interceptors.
+* [**rtc**](https://github.com/webrtc-rs/rtc) — the sans-I/O WebRTC core: ICE · STUN · TURN · mDNS · DTLS · SCTP · DataChannel · SRTP · RTP/RTCP · SDP.
 * [**webrtc**](https://github.com/webrtc-rs/webrtc) — the async, runtime-agnostic `PeerConnection` API on top of `rtc`.
-* [**sfu**](https://github.com/webrtc-rs/sfu) — a Selective Forwarding Unit for group calls on top of `rtc`, live at [sfu.rs](https://sfu.rs).
+* [**sfu**](https://github.com/webrtc-rs/sfu) — a Selective Forwarding Unit media server for group calls on top of `rtc`, live at [sfu.rs](https://sfu.rs).
 * [**apprtc**](https://github.com/webrtc-rs/apprtc) — signaling server and reference web app; P2P is live at [appr.tc](https://appr.tc), SFU signaling (🚧 *planned*) is next.
 * [**whip**](https://github.com/webrtc-rs/whip) — WebRTC-HTTP Ingestion Protocol, for pushing streams *into* the stack. 🚧 *planned*
 * [**whep**](https://github.com/webrtc-rs/whep) — WebRTC-HTTP Egress Protocol, for pulling streams *out* of it. 🚧 *planned*
@@ -36,4 +36,8 @@ Our cores are **sans-I/O**: pure state machines with no sockets, no threads, and
 
 Contributors and pull requests are always welcome, and there is plenty that is well-scoped and open. Sans-I/O means you can usually test your change without a network.
 
-Built with 💖 and supported by our [sponsors](https://github.com/sponsors/webrtc-rs).
+---
+
+<p align="center">
+    Built with 💖 and supported by our <a href="https://github.com/sponsors/webrtc-rs">sponsors</a>.
+</p>
