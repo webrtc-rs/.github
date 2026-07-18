@@ -64,6 +64,37 @@ Our cores are **Sans-I/O**: pure state machines with no sockets, no threads, and
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">SansIO<a href="https://crates.io/crates/sansio"><img src="https://img.shields.io/crates/v/sansio.svg"></a>
 </p>
 
+Each webrtc-rs project is developed and released as an independent Rust crate or application. To keep development fast, projects that depend on unreleased changes use Git submodules instead of waiting for every internal crate to be published to crates.io. The nested source layout used by AppRTC is:
+
+```text
+apprtc/
+├── apprtc/                                       # AppRTC executable crate
+├── appweb/                                       # AppRTC web/API crate
+├── signaling/                                    # AppRTC signaling crate
+└── [sfu]/                                        # SFU repository, AppRTC submodule
+      └── [webrtc]/                               # async WebRTC repository, SFU submodule
+              └── [rtc]/                          # Sans-I/O RTC repository, WebRTC submodule
+                    ├── rtc/                      # RTC core crate
+                    ├── rtc-datachannel           # DataChannel crate
+                    ├── rtc-dtls                  # DTLS crate
+                    ├── rtc-ice                   # ICE crate
+                    ├── rtc-interceptor           # Interceptor crate
+                    ├── rtc-interceptor-derive    # Interceptor Derive crate
+                    ├── rtc-mdns                  # mDNS crate
+                    ├── rtc-media                 # Media crate
+                    ├── rtc-rtcp                  # RTCP crate
+                    ├── rtc-rtp                   # RTP crate
+                    ├── rtc-sctp                  # SCTP crate
+                    ├── rtc-sdp                   # SDP crate
+                    ├── rtc-shared                # Shared crate
+                    ├── rtc-srtp                  # SRTP crate
+                    ├── rtc-stun                  # STUN crate
+                    └── rtc-turn                  # TURN crate
+```
+
+This lets AppRTC build and test against the exact in-development SFU, async WebRTC, and RTC revisions while preserving independent repositories, versioning, releases, and crates.io publication. Published consumers continue to use the corresponding crates.io versions; the submodule layout is a development workflow for cross-repository changes and integration testing.
+
+
 ## Work with us
 
 Contributors and pull requests are always welcome, and there is plenty that is well-scoped and open — simulcast, publish/subscribe, and congestion control in [`sfu`](https://github.com/webrtc-rs/sfu), the WHIP/WHEP crates, plus interop and performance work everywhere. Sans-I/O means you can usually test your change without a network. Come say hi on [Discord](https://discord.gg/4Ju8UHdXMs).
