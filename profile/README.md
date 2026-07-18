@@ -26,8 +26,8 @@ Our cores are **Sans-I/O**: pure state machines with no sockets, no threads, and
 
 * [**sansio**](https://github.com/webrtc-rs/sansio) — the small `sansio::Protocol` trait everything else is written against.
 * [**rtc**](https://github.com/webrtc-rs/rtc) — the Sans-I/O WebRTC core: ICE · STUN · TURN · mDNS · DTLS · SCTP · DataChannel · SRTP · RTP/RTCP · SDP.
+* [**sfu**](https://github.com/webrtc-rs/sfu) — a Sans-I/O SFU (Selective Forwarding Unit) media server for group calls on top of `rtc`, live at [sfu.rs](https://sfu.rs).
 * [**webrtc**](https://github.com/webrtc-rs/webrtc) — the async, runtime-agnostic `PeerConnection` API on top of `rtc`.
-* [**sfu**](https://github.com/webrtc-rs/sfu) — a Selective Forwarding Unit media server for group calls on top of `rtc`, live at [sfu.rs](https://sfu.rs).
 * [**apprtc**](https://github.com/webrtc-rs/apprtc) — signaling server and reference web app; P2P is live at [appr.tc](https://appr.tc), and SFU signaling is next. 🚧
 * [**whip**](https://github.com/webrtc-rs/whip) — WebRTC-HTTP Ingestion Protocol, for pushing streams *into* the stack. 🚧
 * [**whep**](https://github.com/webrtc-rs/whep) — WebRTC-HTTP Egress Protocol, for pulling streams *out* of it. 🚧
