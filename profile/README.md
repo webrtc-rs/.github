@@ -71,10 +71,10 @@ apprtc/
 ├── apprtc/                                       # AppRTC executable crate
 ├── appweb/                                       # AppRTC web/API crate
 ├── signaling/                                    # AppRTC signaling crate
+├── signaling-proto/                              # AppRTC signaling-proto crate
 └── [sfu]/                                        # SFU repository, AppRTC submodule
       └── [webrtc]/                               # async WebRTC repository, SFU submodule
               └── [rtc]/                          # Sans-I/O RTC repository, WebRTC submodule
-                    ├── rtc/                      # RTC core crate
                     ├── rtc-datachannel           # DataChannel crate
                     ├── rtc-dtls                  # DTLS crate
                     ├── rtc-ice                   # ICE crate
