@@ -27,10 +27,8 @@ Our cores are **Sans-I/O**: pure state machines with no sockets, no threads, and
 * [**sfu**](https://github.com/webrtc-rs/sfu) — a Sans-I/O SFU (Selective Forwarding Unit) media server for group calls on top of `rtc`.
 * [**webrtc**](https://github.com/webrtc-rs/webrtc) — the async, runtime-agnostic `PeerConnection` API on top of `rtc`.
 * [**apprtc**](https://github.com/webrtc-rs/apprtc) — P2P/SFU signaling server and reference web app with automatic P2P→SFU upgrade, live at [appr.tc](https://appr.tc).
-* [**whip**](https://github.com/webrtc-rs/whip) — WebRTC-HTTP Ingestion Protocol, for pushing streams *into* the stack. 🚧
-* [**whep**](https://github.com/webrtc-rs/whep) — WebRTC-HTTP Egress Protocol, for pulling streams *out* of it. 🚧
 
-🚧 = in progress. Everything else is published on crates.io:
+Everything is published on crates.io:
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">AppRTC<a href="https://crates.io/crates/apprtc"><img src="https://img.shields.io/crates/v/apprtc.svg"></a>
@@ -95,7 +93,7 @@ This lets AppRTC build and test against the exact in-development SFU, async WebR
 
 ## Work with us
 
-Contributors and pull requests are always welcome, and there is plenty that is well-scoped and open — simulcast, publish/subscribe, and congestion control in [`sfu`](https://github.com/webrtc-rs/sfu), the WHIP/WHEP crates, plus interop and performance work everywhere. Sans-I/O means you can usually test your change without a network. Come say hi on [Discord](https://discord.gg/4Ju8UHdXMs).
+Contributors and pull requests are always welcome, and there is plenty that is well-scoped and open — simulcast, publish/subscribe, and congestion control in [`sfu`](https://github.com/webrtc-rs/sfu), plus interop and performance work everywhere. Sans-I/O means you can usually test your change without a network. Come say hi on [Discord](https://discord.gg/4Ju8UHdXMs).
 
 ---
 
