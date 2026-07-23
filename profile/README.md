@@ -26,7 +26,7 @@ Our cores are **Sans-I/O**: pure state machines with no sockets, no threads, and
 * [**rtc**](https://github.com/webrtc-rs/rtc) — the Sans-I/O WebRTC core: ICE · STUN · TURN · mDNS · DTLS · SCTP · DataChannel · SRTP · RTP/RTCP · SDP.
 * [**sfu**](https://github.com/webrtc-rs/sfu) — a Sans-I/O SFU (Selective Forwarding Unit) media server for group calls on top of `rtc`.
 * [**webrtc**](https://github.com/webrtc-rs/webrtc) — the async, runtime-agnostic `PeerConnection` API on top of `rtc`.
-* [**apprtc**](https://github.com/webrtc-rs/apprtc) — P2P/SFU signaling server and reference web app with automatic P2P→SFU upgrade, live at [appr.tc](https://appr.tc).
+* [**apprtc**](https://github.com/webrtc-rs/apprtc) — P2P/SFU signaling server and reference web app with automatic P2P↔SFU upgrade/downgrade, live at [appr.tc](https://appr.tc).
 
 Everything is published on crates.io:
 
@@ -64,7 +64,6 @@ Each webrtc-rs project is developed and released as an independent Rust crate or
 
 ```text
 apprtc/
-├── apprtc/                                       # AppRTC executable crate
 ├── appweb/                                       # AppRTC web/API crate
 ├── signaling/                                    # AppRTC signaling crate
 ├── signaling-proto/                              # AppRTC signaling-proto crate
@@ -98,7 +97,7 @@ Contributors and pull requests are always welcome, and there is plenty that is w
 ---
 
 <p align="center">
-    Built with 💖 and supported by our sponsors:
+    Built with 💖. Sponsor the projects via:
     <br><br>
     <a href="https://github.com/sponsors/webrtc-rs"><img width="16" height="16" alt="GitHub Sponsors" src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/github-sponsors.svg" />&nbsp;github.com/sponsors/webrtc-rs</a> 
     &nbsp;·&nbsp;
