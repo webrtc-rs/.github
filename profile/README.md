@@ -9,9 +9,7 @@
   ·
   <a href="https://webrtc.rs/blog/">📝 Blog</a>
   ·
-  <a href="https://appr.tc">📞 P2P Demo</a>
-  ·
-  <a href="https://sfu.rs">🎥 SFU Demo</a>
+  <a href="https://appr.tc">🎥 P2P/SFU Demo</a>
   ·
   <a href="https://discord.gg/4Ju8UHdXMs">🎙 Discord</a>
 </p>
@@ -26,9 +24,9 @@ Our cores are **Sans-I/O**: pure state machines with no sockets, no threads, and
 
 * [**sansio**](https://github.com/webrtc-rs/sansio) — the small `sansio::Protocol` trait everything else is written against.
 * [**rtc**](https://github.com/webrtc-rs/rtc) — the Sans-I/O WebRTC core: ICE · STUN · TURN · mDNS · DTLS · SCTP · DataChannel · SRTP · RTP/RTCP · SDP.
-* [**sfu**](https://github.com/webrtc-rs/sfu) — a Sans-I/O SFU (Selective Forwarding Unit) media server for group calls on top of `rtc`, live at [sfu.rs](https://sfu.rs).
+* [**sfu**](https://github.com/webrtc-rs/sfu) — a Sans-I/O SFU (Selective Forwarding Unit) media server for group calls on top of `rtc`.
 * [**webrtc**](https://github.com/webrtc-rs/webrtc) — the async, runtime-agnostic `PeerConnection` API on top of `rtc`.
-* [**apprtc**](https://github.com/webrtc-rs/apprtc) — signaling server and reference web app; P2P is live at [appr.tc](https://appr.tc), and SFU signaling is next. 🚧
+* [**apprtc**](https://github.com/webrtc-rs/apprtc) — P2P/SFU signaling server and reference web app with automatic P2P→SFU upgrade, live at [appr.tc](https://appr.tc).
 * [**whip**](https://github.com/webrtc-rs/whip) — WebRTC-HTTP Ingestion Protocol, for pushing streams *into* the stack. 🚧
 * [**whep**](https://github.com/webrtc-rs/whep) — WebRTC-HTTP Egress Protocol, for pulling streams *out* of it. 🚧
 
