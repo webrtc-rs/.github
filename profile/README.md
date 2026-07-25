@@ -25,8 +25,9 @@ Our cores are **Sans-I/O**: pure state machines with no sockets, no threads, and
 * [**sansio**](https://github.com/webrtc-rs/sansio) — the small `sansio::Protocol` trait everything else is written against.
 * [**rtc**](https://github.com/webrtc-rs/rtc) — the Sans-I/O WebRTC core: ICE · STUN · TURN · mDNS · DTLS · SCTP · DataChannel · SRTP · RTP/RTCP · SDP.
 * [**sfu**](https://github.com/webrtc-rs/sfu) — a Sans-I/O SFU (Selective Forwarding Unit) media server for group calls on top of `rtc`.
+* [**signaling**](https://github.com/webrtc-rs/signaling) — a Sans-I/O signaling protocol implementation for both P2P and SFU.
 * [**webrtc**](https://github.com/webrtc-rs/webrtc) — the async, runtime-agnostic `PeerConnection` API on top of `rtc`.
-* [**apprtc**](https://github.com/webrtc-rs/apprtc) — P2P/SFU signaling server and reference web app with automatic P2P↔SFU upgrade/downgrade, live at [appr.tc](https://appr.tc).
+* [**apprtc**](https://github.com/webrtc-rs/apprtc) — P2P/SFU server and web app with automatic P2P↔SFU upgrade/downgrade, live at [appr.tc](https://appr.tc).
 
 Everything is published on crates.io:
 
@@ -63,26 +64,26 @@ Each webrtc-rs project is developed and released as an independent Rust crate or
 
 ```text
 apprtc/
-├── signaling/                                    # AppRTC signaling crate
-├── signaling-proto/                              # AppRTC signaling-proto crate
-└── [sfu]/                                        # SFU repository, AppRTC submodule
-      └── [webrtc]/                               # async WebRTC repository, SFU submodule
+├── [signaling]/                                  # Sans-I/O Signaling repository, AppRTC submodule
+|     └── signaling-proto                         # └── signaling-proto crate
+└── [sfu]/                                        # Sans-I/O SFU repository, AppRTC submodule
+      └── [webrtc]/                               # Async WebRTC repository, SFU submodule
               └── [rtc]/                          # Sans-I/O RTC repository, WebRTC submodule
-                    ├── rtc-datachannel           # DataChannel crate
-                    ├── rtc-dtls                  # DTLS crate
-                    ├── rtc-ice                   # ICE crate
-                    ├── rtc-interceptor           # Interceptor crate
-                    ├── rtc-interceptor-derive    # Interceptor Derive crate
-                    ├── rtc-mdns                  # mDNS crate
-                    ├── rtc-media                 # Media crate
-                    ├── rtc-rtcp                  # RTCP crate
-                    ├── rtc-rtp                   # RTP crate
-                    ├── rtc-sctp                  # SCTP crate
-                    ├── rtc-sdp                   # SDP crate
-                    ├── rtc-shared                # Shared crate
-                    ├── rtc-srtp                  # SRTP crate
-                    ├── rtc-stun                  # STUN crate
-                    └── rtc-turn                  # TURN crate
+                    ├── rtc-datachannel           # ├── DataChannel crate
+                    ├── rtc-dtls                  # ├── DTLS crate
+                    ├── rtc-ice                   # ├── ICE crate
+                    ├── rtc-interceptor           # ├── Interceptor crate
+                    ├── rtc-interceptor-derive    # ├── Interceptor Derive crate
+                    ├── rtc-mdns                  # ├── mDNS crate
+                    ├── rtc-media                 # ├── Media crate
+                    ├── rtc-rtcp                  # ├── RTCP crate
+                    ├── rtc-rtp                   # ├── RTP crate
+                    ├── rtc-sctp                  # ├── SCTP crate
+                    ├── rtc-sdp                   # ├── SDP crate
+                    ├── rtc-shared                # ├── Shared crate
+                    ├── rtc-srtp                  # ├── SRTP crate
+                    ├── rtc-stun                  # ├── STUN crate
+                    └── rtc-turn                  # └── TURN crate
 ```
 
 This lets AppRTC build and test against the exact in-development SFU, async WebRTC, and RTC revisions while preserving independent repositories, versioning, releases, and crates.io publication. Published consumers continue to use the corresponding crates.io versions; the submodule layout is a development workflow for cross-repository changes and integration testing.
