@@ -32,12 +32,11 @@ Everything is published on crates.io:
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">AppRTC<a href="https://crates.io/crates/apprtc"><img src="https://img.shields.io/crates/v/apprtc.svg"></a>
-    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">AppWeb<a href="https://crates.io/crates/appweb"><img src="https://img.shields.io/crates/v/appweb.svg"></a>
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">Signaling<a href="https://crates.io/crates/signaling"><img src="https://img.shields.io/crates/v/signaling.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">SFU<a href="https://crates.io/crates/sfu"><img src="https://img.shields.io/crates/v/sfu.svg"></a>
     <br><br>
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">WebRTC<a href="https://crates.io/crates/webrtc"><img src="https://img.shields.io/crates/v/webrtc.svg"></a>
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">RTC<a href="https://crates.io/crates/rtc"><img src="https://img.shields.io/crates/v/rtc.svg"></a>
-    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">SFU<a href="https://crates.io/crates/sfu"><img src="https://img.shields.io/crates/v/sfu.svg"></a>
     <br>
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">Media<a href="https://crates.io/crates/rtc-media"><img src="https://img.shields.io/crates/v/rtc-media.svg"></a>
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">Interceptor<a href="https://crates.io/crates/rtc-interceptor"><img src="https://img.shields.io/crates/v/rtc-interceptor.svg"></a>
@@ -64,7 +63,6 @@ Each webrtc-rs project is developed and released as an independent Rust crate or
 
 ```text
 apprtc/
-├── appweb/                                       # AppRTC web/API crate
 ├── signaling/                                    # AppRTC signaling crate
 ├── signaling-proto/                              # AppRTC signaling-proto crate
 └── [sfu]/                                        # SFU repository, AppRTC submodule
