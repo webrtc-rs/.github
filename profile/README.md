@@ -2,7 +2,7 @@
   <a href="https://webrtc.rs"><img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/webrtc.rs.png" alt="WebRTC.rs" height="140"></a>
 </p>
 
-<h1 align="center">Async-friendly and Sans-I/O WebRTC and SFU in Rust</h1>
+<h1 align="center">Async-friendly and Sans-I/O WebRTC in Rust</h1>
 
 <p align="center">
   <a href="https://webrtc.rs">🌐 Website</a>
@@ -24,9 +24,9 @@ Our cores are **Sans-I/O**: pure state machines with no sockets, no threads, and
 
 * [**sansio**](https://github.com/webrtc-rs/sansio) — the small `sansio::Protocol` trait everything else is written against.
 * [**rtc**](https://github.com/webrtc-rs/rtc) — the Sans-I/O WebRTC core: ICE · STUN · TURN · mDNS · DTLS · SCTP · DataChannel · SRTP · RTP/RTCP · SDP.
+* [**webrtc**](https://github.com/webrtc-rs/webrtc) — the async, runtime-agnostic `PeerConnection` API on top of `rtc`.
 * [**sfu**](https://github.com/webrtc-rs/sfu) — a Sans-I/O SFU (Selective Forwarding Unit) media server for group calls on top of `rtc`.
 * [**signaling**](https://github.com/webrtc-rs/signaling) — a Sans-I/O signaling protocol implementation for both P2P and SFU.
-* [**webrtc**](https://github.com/webrtc-rs/webrtc) — the async, runtime-agnostic `PeerConnection` API on top of `rtc`.
 * [**apprtc**](https://github.com/webrtc-rs/apprtc) — P2P/SFU server and web app with automatic P2P↔SFU upgrade/downgrade, live at [appr.tc](https://appr.tc).
 
 Everything is published on crates.io:
