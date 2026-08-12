@@ -57,6 +57,7 @@ Everything is published on crates.io:
     <br>
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">SDP<a href="https://crates.io/crates/rtc-sdp"><img src="https://img.shields.io/crates/v/rtc-sdp.svg"></a>
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">Shared<a href="https://crates.io/crates/rtc-shared"><img src="https://img.shields.io/crates/v/rtc-shared.svg"></a>
+    <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">Crypto<a href="https://crates.io/crates/rtc-crypto"><img src="https://img.shields.io/crates/v/rtc-crypto.svg"></a>
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">SansIO<a href="https://crates.io/crates/sansio"><img src="https://img.shields.io/crates/v/sansio.svg"></a>
 </p>
 
@@ -69,6 +70,7 @@ apprtc/
 └── [sfu]/                                        # Sans-I/O SFU repository, AppRTC submodule
       └── [webrtc]/                               # Async WebRTC repository, SFU submodule
               └── [rtc]/                          # Sans-I/O RTC repository, WebRTC submodule
+                    ├── rtc-crypto                # ├── Crypto crate
                     ├── rtc-datachannel           # ├── DataChannel crate
                     ├── rtc-dtls                  # ├── DTLS crate
                     ├── rtc-ice                   # ├── ICE crate
