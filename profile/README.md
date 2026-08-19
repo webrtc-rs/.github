@@ -75,7 +75,6 @@ apprtc/
                     ├── rtc-dtls                  # ├── DTLS crate
                     ├── rtc-ice                   # ├── ICE crate
                     ├── rtc-interceptor           # ├── Interceptor crate
-                    ├── rtc-interceptor-derive    # ├── Interceptor Derive crate
                     ├── rtc-mdns                  # ├── mDNS crate
                     ├── rtc-media                 # ├── Media crate
                     ├── rtc-rtcp                  # ├── RTCP crate
