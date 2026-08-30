@@ -88,7 +88,7 @@ webrtc                              # Async WebRTC repository
       └── rtc-turn                  # └── TURN crate
 ```
 
-This lets AppRTC build and test against the exact in-development SFU, async WebRTC, and RTC revisions while preserving independent repositories, versioning, releases, and crates.io publication. Published consumers continue to use the corresponding crates.io versions; the submodule layout is a development workflow for cross-repository changes and integration testing.
+This lets AppRTC/WebRTC build and test against the exact in-development SFU and RTC crates while preserving independent repositories, versioning, releases, and crates.io publication. Published consumers continue to use the corresponding crates.io versions; the submodule layout is a development workflow for cross-repository changes and integration testing.
 
 
 ## Work with us
