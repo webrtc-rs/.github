@@ -61,30 +61,31 @@ Everything is published on crates.io:
     <img src="https://raw.githubusercontent.com/webrtc-rs/webrtc-rs.github.io/master/res/check.png">SansIO<a href="https://crates.io/crates/sansio"><img src="https://img.shields.io/crates/v/sansio.svg"></a>
 </p>
 
-Each webrtc-rs project is developed and released as an independent Rust crate or application. To keep development fast, projects that depend on unreleased changes use Git submodules instead of waiting for every internal crate to be published to crates.io. The nested source layout used by AppRTC is:
+Each webrtc-rs project is developed and released as an independent Rust crate or application. To keep development fast, projects that depend on unreleased changes use Git submodules instead of waiting for every internal crate to be published to crates.io. The nested source layout used by AppRTC/WebRTC is:
 
 ```text
-apprtc/
-├── [signaling]/                                  # Sans-I/O Signaling repository, AppRTC submodule
-|     └── signaling-proto                         # └── signaling-proto crate
-└── [sfu]/                                        # Sans-I/O SFU repository, AppRTC submodule
-      └── [webrtc]/                               # Async WebRTC repository, SFU submodule
-              └── [rtc]/                          # Sans-I/O RTC repository, WebRTC submodule
-                    ├── rtc-crypto                # ├── Crypto crate
-                    ├── rtc-datachannel           # ├── DataChannel crate
-                    ├── rtc-dtls                  # ├── DTLS crate
-                    ├── rtc-ice                   # ├── ICE crate
-                    ├── rtc-interceptor           # ├── Interceptor crate
-                    ├── rtc-mdns                  # ├── mDNS crate
-                    ├── rtc-media                 # ├── Media crate
-                    ├── rtc-rtcp                  # ├── RTCP crate
-                    ├── rtc-rtp                   # ├── RTP crate
-                    ├── rtc-sctp                  # ├── SCTP crate
-                    ├── rtc-sdp                   # ├── SDP crate
-                    ├── rtc-shared                # ├── Shared crate
-                    ├── rtc-srtp                  # ├── SRTP crate
-                    ├── rtc-stun                  # ├── STUN crate
-                    └── rtc-turn                  # └── TURN crate
+apprtc
+├── [signaling]                     # Sans-I/O Signaling repository, AppRTC submodule
+|     └── signaling-proto           # └── signaling-proto crate
+└── [sfu]                           # Sans-I/O SFU repository, AppRTC submodule
+
+webrtc                              # Async WebRTC repository
+└── [rtc]                           # Sans-I/O RTC repository, WebRTC submodule
+      ├── rtc-crypto                # ├── Crypto crate
+      ├── rtc-datachannel           # ├── DataChannel crate
+      ├── rtc-dtls                  # ├── DTLS crate
+      ├── rtc-ice                   # ├── ICE crate
+      ├── rtc-interceptor           # ├── Interceptor crate
+      ├── rtc-mdns                  # ├── mDNS crate
+      ├── rtc-media                 # ├── Media crate
+      ├── rtc-rtcp                  # ├── RTCP crate
+      ├── rtc-rtp                   # ├── RTP crate
+      ├── rtc-sctp                  # ├── SCTP crate
+      ├── rtc-sdp                   # ├── SDP crate
+      ├── rtc-shared                # ├── Shared crate
+      ├── rtc-srtp                  # ├── SRTP crate
+      ├── rtc-stun                  # ├── STUN crate
+      └── rtc-turn                  # └── TURN crate
 ```
 
 This lets AppRTC build and test against the exact in-development SFU, async WebRTC, and RTC revisions while preserving independent repositories, versioning, releases, and crates.io publication. Published consumers continue to use the corresponding crates.io versions; the submodule layout is a development workflow for cross-repository changes and integration testing.
